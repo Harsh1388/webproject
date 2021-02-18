@@ -4,7 +4,7 @@ const app=express();
 const path=require("path");
 const hbs=require("hbs");
  
-const port=8123; //process.env.Port || 81
+const port=process.env.Port || 8123; //process.env.Port || 81
 
 
 app.set('view engine','hbs');
@@ -33,5 +33,5 @@ app.get("*",(req,res)=>{
     });
 });
 app.listen(port,()=>{
-    console.log("Listening to port 8123");
+    console.log(`Listening to port ${port}`);
 });
